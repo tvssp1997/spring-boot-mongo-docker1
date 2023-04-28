@@ -1,8 +1,3 @@
-FROM openjdk:8-alpine
-RUN apk update && apk add /bin/bash
-RUN mkdir -p /opt/app
-ENV PROJECT_HOME /opt/app
-COPY target/spring-boot-mongo-1.0.jar $PROJECT_HOME/spring-boot-mongo.jar
-WORKDIR $PROJECT_HOME
-EXPOSE 8080
+FROM tomcat:8.5.47-jdk8-openjd
+COPY target/spring-boot-mongo-1.0.jar /usr/local/tomcat/apps/spring-boot-mongo-1.0.jar
 CMD ["java" ,"-jar","./spring-boot-mongo.jar"]
