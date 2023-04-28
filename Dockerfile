@@ -1,4 +1,4 @@
-FROM openjdk:8:-alpine
+FROM openjdk8:-alpine
 RUN apk update && apk add /bin/bash
 RUN mkdir -p /opt/app
 ENV PROJECT_HOME /opt/app
